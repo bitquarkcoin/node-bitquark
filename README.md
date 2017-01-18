@@ -540,9 +540,9 @@ nodeunit test/test-node-bitquark.js
 
 ## Bounties
 
-[bitquark](http://www.bitquark.com) donation address is CdmcSJ8aokHkkZS1W6KCvXiJEGw4sGkRVj
+[bitquark](http://www.bitquark.info) donation BTQ address is 18PFygCob3Mr2Fu3WyBYELh66yZ2XHjEcv
 
-Donations in [bitquark](http://www.bitquark.cc) will be used for bounties. The first bounty will be awarded for creating a unit test suite. As a side note: I encourage all GitHub repository owners to post a donation address so their community can easily support development financially. 
+Donations in [bitquark](http://www.bitquark.info) will be used for bounties. The first bounty will be awarded for creating a unit test suite. As a side note: I encourage all GitHub repository owners to post a donation address so their community can easily support development financially. 
 
 
 
