@@ -1,32 +1,32 @@
-# A Node.js Quarkbar Client!
+# A Node.js BitQuark Client!
 
-![quarkbar](https://github.com/Quarkbar-Project/node-quarkbar-master/blob/master/node-quarkbar.png?raw=true)
+![bitquark](https://github.com/bitquarkcoin/node-bitquark-master/blob/master/node-bitquark.png?raw=true)
 
-node-quarkbar is a quarkbar client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with quarkbar. The purpose of this repository is:
+node-bitquark is a bitquark client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with bitquark. The purpose of this repository is:
 
-* Provide a one-stop resource for the Node.js developer to get started with quarkbar integration.
-* Prevent would-be quarkbar web developers worrying whether a Bitcoin client will work out of the box.
-* Promote Node.js development of quarkbar web apps.
-* Identify and address any incompatibilities with the quarkbar and Bitcoin APIs that exist now and/or in the future.
+* Provide a one-stop resource for the Node.js developer to get started with bitquark integration.
+* Prevent would-be bitquark web developers worrying whether a Bitcoin client will work out of the box.
+* Promote Node.js development of bitquark web apps.
+* Identify and address any incompatibilities with the bitquark and Bitcoin APIs that exist now and/or in the future.
 
 ## Dependencies
 
-You'll need a running instance of [quarkbard](https://github.com/quarkbar-project/quarkbar) to connect with. 
+You'll need a running instance of [bitquarkd](https://github.com/bitquarkcoin/) to connect with. 
 
-Then, install the node-quarkbar NPM package.
+Then, install the node-bitquark NPM package.
 
-`npm install git://github.com/quarkbar-project/node-quarkbar/`
+`npm install git://github.com/bitquarkcoin/node-bitquark/`
 
 ## Examples
 
-Some code examples follow below, but for more complete examples, see [these snippets](https://github.com/quarkbar-project/quarkbar-code-snippets), or this [wallet app](comingsoon...) which was created to to test this module.
+Some code examples follow below, but for more complete examples, see [these snippets](https://github.com/bitquarkcoin/, or this [wallet app](comingsoon...) which was created to to test this module.
 
 ```js
-var quarkbar = require('node-quarkbar')()
+var bitquark = require('node-bitquark')()
 
-quarkbar.auth('myusername', 'mypassword')
+bitquark.auth('myusername', 'mypassword')
 
-quarkbar.getDifficulty(function() {
+bitquark.getDifficulty(function() {
     console.log(arguments);
 })
 
@@ -37,9 +37,9 @@ quarkbar.getDifficulty(function() {
 Pretty much everything is chainable.
 
 ```js
-var quarkbar = require('node-quarkbar')()
+var bitquark = require('node-bitquark')()
 
-quarkbar
+bitquark
 .auth('MyUserName', 'mypassword')
 .getNewAddress()
 .getBalance()
@@ -50,7 +50,7 @@ quarkbar
 The [Litecoin API](https://litecoin.info/Litecoin_API) is supported as direct methods. Use either camelcase or lowercase.
 
 ```js
-quarkbar.getNewAddress(function(err, address) {
+bitquark.getNewAddress(function(err, address) {
     this.validateaddress(address, function(err, info) {
 
     })
@@ -62,9 +62,9 @@ Executes the given command with optional arguments. Function `callback` defaults
 All of the API commands are supported in lowercase or camelcase. Or uppercase. Anycase!
 
 ```js
-quarkbar.exec('getNewAddress')
+bitquark.exec('getNewAddress')
 
-quarkbar.exec('getbalance', function(err, balance) {
+bitquark.exec('getbalance', function(err, balance) {
 
 })
 ```
@@ -74,7 +74,7 @@ quarkbar.exec('getbalance', function(err, balance) {
 Accepts either key & value strings or an Object containing settings, returns `this` for chainability.
 
 ```js
-quarkbar.set('host', '127.0.0.1')
+bitquark.set('host', '127.0.0.1')
 ```
 
 ### .get(key [string])
@@ -82,7 +82,7 @@ quarkbar.set('host', '127.0.0.1')
 Returns the specified option's value
 
 ```js
-quarkbar.get('user')
+bitquark.get('user')
 ```
 
 ### .auth(user [string], pass [string])
@@ -105,7 +105,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> addmultisigaddress </td>
 <td> [nrequired] ["key","key"] [account] </td>
-<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a quarkbar address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
+<td> <b>Currently only available on testnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a bitquark address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -116,8 +116,8 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> dumpprivkey </td>
-<td> [quarkbaraddress] </td>
-<td> Reveals the private key corresponding to <quarkbaraddress< </td>
+<td> [bitquarkaddress] </td>
+<td> Reveals the private key corresponding to <bitquarkaddress< </td>
 <td> Y
 </td></tr>
 <tr>
@@ -128,14 +128,14 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> getaccount </td>
-<td> [quarkbaraddress] </td>
+<td> [bitquarkaddress] </td>
 <td> Returns the account associated with the given address. </td>
 <td> N
 </td></tr>
 <tr>
 <td> getaccountaddress </td>
 <td> [account] </td>
-<td> Returns the current quarkbar address for receiving payments to this account. </td>
+<td> Returns the current bitquark address for receiving payments to this account. </td>
 <td> N
 </td></tr>
 <tr>
@@ -189,7 +189,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getgenerate </td>
 <td> </td>
-<td> Returns true or false whether quarkbard is currently generating hashes </td>
+<td> Returns true or false whether bitquarkd is currently generating hashes </td>
 <td> N
 </td></tr>
 <tr>
@@ -241,7 +241,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 <tr>
 <td> getnewaddress </td>
 <td> [account] </td>
-<td> Returns a new quarkbar address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
+<td> Returns a new bitquark address for receiving payments.  If [account] is specified (recommended), it is added to the address book so payments received with the address will be credited to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -252,8 +252,8 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> getreceivedbyaddress </td>
-<td> [quarkbaraddress] [minconf=1] </td>
-<td> Returns the total amount received by <quarkbaraddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
+<td> [bitquarkaddress] [minconf=1] </td>
+<td> Returns the total amount received by <bitquarkaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
 <td> N
 </td></tr>
 <tr>
@@ -296,7 +296,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> importprivkey </td>
-<td> [quarkbarprivkey] [label] </td>
+<td> [bitquarkprivkey] [label] </td>
 <td> Adds a private key (as returned by dumpprivkey) to your wallet. </td>
 <td> Y
 </td></tr>
@@ -332,7 +332,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </li><li> "amount": total amount received by the address
 </li><li> "confirmations": number of confirmations of the most recent transaction included
 </li></ul>
-<p>To get a list of accounts on the system, execute quarkbard listreceivedbyaddress 0 true
+<p>To get a list of accounts on the system, execute bitquarkd listreceivedbyaddress 0 true
 </p>
 </td>
 <td> N
@@ -358,7 +358,7 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> sendfrom </td>
-<td> [fromaccount] [toquarkbaraddress] [amount] [minconf=1] [comment] [comment-to] </td>
+<td> [fromaccount] [tobitquarkaddress] [amount] [minconf=1] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Will send the given amount to the given address, ensuring the account has a valid balance using [minconf] confirmations. Returns the transaction ID if successful (not in JSON object). </td>
 <td> Y
 </td></tr>
@@ -370,13 +370,13 @@ All [Litecoin API](https://litecoin.info/Litecoin_API) commands are supported, i
 </td></tr>
 <tr>
 <td> sendtoaddress </td>
-<td> [quarkbaraddress] [amount] [comment] [comment-to] </td>
+<td> [bitquarkaddress] [amount] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Returns the transaction ID <txid< if successful. </td>
 <td> Y
 </td></tr>
 <tr>
 <td> setaccount </td>
-<td> [quarkbaraddress] [account] </td>
+<td> [bitquarkaddress] [account] </td>
 <td> Sets the account associated with the given address. Assigning address that is already assigned to the same account will create a new address associated with that account. </td>
 <td> N
 </td></tr>
@@ -390,7 +390,7 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 </td></tr>
 <tr>
 <td> signmessage </td>
-<td> [quarkbaraddress] [message] </td>
+<td> [bitquarkaddress] [message] </td>
 <td> Sign a message with the private key of an address. </td>
 <td> Y
 </td></tr>
@@ -403,18 +403,18 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 <tr>
 <td> stop </td>
 <td> </td>
-<td> Stop quarkbar server. </td>
+<td> Stop bitquark server. </td>
 <td> N
 </td></tr>
 <tr>
 <td> validateaddress </td>
-<td> [quarkbaraddress] </td>
-<td> Return information about [quarkbaraddress]. </td>
+<td> [bitquarkaddress] </td>
+<td> Return information about [bitquarkaddress]. </td>
 <td> N
 </td></tr>
 <tr>
 <td> verifymessage </td>
-<td> [quarkbaraddress] [signature] [message] </td>
+<td> [bitquarkaddress] [signature] [message] </td>
 <td> Verify a signed message. </td>
 <td> N
 </td></tr>
@@ -443,19 +443,19 @@ You may pass options to the initialization function or to the `set` method.
 
 ```js
 
-var quarkbar = require('quarkbar')({
+var bitquark = require('bitquark')({
     user:'user'
 })
 
-quarkbar.set('pass', 'somn')
-quarkbar.set({port:7142})
+bitquark.set('pass', 'somn')
+bitquark.set({port:9108})
 
 ```
 
 Available options and default values:
 
 + host *localhost*
-+ port *7142*
++ port *9108*
 + user
 + pass
 + passphrasecallback
@@ -466,7 +466,7 @@ Available options and default values:
 
 With an encryped wallet, any operation that accesses private keys requires a wallet unlock. A wallet is unlocked using the `walletpassphrase <passphrase> <timeout>` JSON-RPC method: the wallet will relock after `timeout` seconds.
 
-You may pass an optional function `passphrasecallback` to the `node-quarkbar` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
+You may pass an optional function `passphrasecallback` to the `node-bitquark` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
 
     function(command, args, callback) {}
 
@@ -477,7 +477,7 @@ You may pass an optional function `passphrasecallback` to the `node-quarkbar` in
 You may hard code your passphrase (not recommended) as follows:
 
 ```js
-var quarkbar = require('node-quarkbar')({
+var bitquark = require('node-bitquark')({
     passphrasecallback: function(command, args, callback) {
         callback(null, 'passphrase', 30);
     }
@@ -494,7 +494,7 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-var quarkbar = require('node-quarkbar')({
+var bitquark = require('node-bitquark')({
   passphrasecallback: function(command, args, callback) {
     rl.question('Enter passphrase for "' + command + '" operation: ', function(passphrase) {
       if (passphrase) {
@@ -509,20 +509,20 @@ var quarkbar = require('node-quarkbar')({
 
 ### Secure RPC with SSL
 
-By default `quarkbard` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `quarkbard` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `quarkbar.conf`:
+By default `bitquarkd` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `bitquarkd` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `bitquark.conf`:
 
     rpcssl=1
-    rpcsslcertificatechainfile=/etc/ssl/certs/quarkbard.crt
-    rpcsslprivatekeyfile=/etc/ssl/private/quarkbard.pem
+    rpcsslcertificatechainfile=/etc/ssl/certs/bitquarkd.crt
+    rpcsslprivatekeyfile=/etc/ssl/private/bitquarkd.pem
 
-In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `quarkbard.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-quarkbar is secured!
+In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `bitquarkd.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-bitquark is secured!
     
 ```js
 var fs = require('fs')
 
-var ca = fs.readFileSync('quarkbard.crt')
+var ca = fs.readFileSync('bitquarkd.crt')
 
-var quarkbar = require('node-quarkbar')({
+var bitquark = require('node-bitquark')({
   user: 'rpcusername',
   pass: 'rpcpassword',
   https: true,
@@ -535,16 +535,17 @@ var quarkbar = require('node-quarkbar')({
 ```
 npm install -g nodeunit
 
-nodeunit test/test-node-quarkbar.js
+nodeunit test/test-node-bitquark.js
 ```
 
 ## Bounties
 
-[quarkbar](http://www.quarkbar.com) donation address is CdmcSJ8aokHkkZS1W6KCvXiJEGw4sGkRVj
+[bitquark](http://www.bitquark.com) donation address is CdmcSJ8aokHkkZS1W6KCvXiJEGw4sGkRVj
 
-Donations in [quarkbar](http://www.quarkbar.cc) will be used for bounties. The first bounty will be awarded for creating a unit test suite. As a side note: I encourage all GitHub repository owners to post a donation address so their community can easily support development financially. 
+Donations in [bitquark](http://www.bitquark.cc) will be used for bounties. The first bounty will be awarded for creating a unit test suite. As a side note: I encourage all GitHub repository owners to post a donation address so their community can easily support development financially. 
 
 
 
-#   n o d e - b i t q u a r k  
- 
+#   n o d e - b i t q u a r k 
+ 
+ 
