@@ -1,6 +1,6 @@
 # A Node.js BitQuark Client!
 
-![bitquark](https://github.com/bitquarkcoin/node-bitquark-master/blob/master/node-bitquark.png?raw=true)
+![bitquark](https://github.com/bitquarkcoin/node-bitquark/blob/master/node-bitquark.png?raw=true)
 
 node-bitquark is a bitquark client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with bitquark. The purpose of this repository is:
 
