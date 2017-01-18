@@ -1,0 +1,13 @@
+{
+    "name": "node-bitquark",
+    "version": "0.3.9",
+    "description": "BitQuark client",
+    "keywords": ["bitquark"],
+    "repository": "git://github.org/bitquarkcoin/node-bitquark.git",
+    "author": "BitQuark <bitquarkcoin@gmail.com",
+    "main": "lib/bitquark.js",
+    "engines": { "node": ">= 0.4.0" },
+    "devDependencies": {
+        "nodeunit": "*"
+    }
+}
